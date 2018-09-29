@@ -50,7 +50,6 @@ public class jpAProjectOOP extends Application {
          */
 
         int serialNumber;
-        String manufacturer;
         Date manufacturedOn;
         String name;
         Integer currentProductionNumber = 1;
