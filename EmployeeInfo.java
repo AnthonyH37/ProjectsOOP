@@ -4,27 +4,20 @@
  * <p>name and then create a user id of their first initial and surname
  */
 import java.util.Scanner;
-
 import java.util.regex.Matcher;
-
 import java.util.regex.Pattern;
 
 public class EmployeeInfo {
 
   private StringBuilder name;
-
   private String code;
-
   private Scanner in = new Scanner(System.in, "UTF-8");
-
   private String deptId;
-
   private Pattern p = Pattern.compile("^[A-Z][a-z]{3}[1-9]{2}$");
 
   EmployeeInfo() {
 
     setName();
-
     setDeptId();
   }
 
@@ -49,13 +42,11 @@ public class EmployeeInfo {
     if (checkName(testName)) {
 
       this.name = testName;
-
       createEmployeeCode(testName);
 
     } else {
 
       this.name = testName;
-
       this.code = "guest";
     }
   }
@@ -72,7 +63,6 @@ public class EmployeeInfo {
   private String inputName() {
 
     System.out.println("Please enter your first and last name:");
-
     return in.nextLine();
   }
 
@@ -81,7 +71,6 @@ public class EmployeeInfo {
   private boolean checkName(StringBuilder name) {
 
     if (name.indexOf(" ") > 0) {
-
       return (name.indexOf(" ", name.indexOf(" ") + 1) == -1);
 
     } else return false;
@@ -90,7 +79,6 @@ public class EmployeeInfo {
   private String getDeptId() {
 
     System.out.println("Please enter the department ID:");
-
     return in.nextLine();
   }
 
@@ -122,7 +110,6 @@ public class EmployeeInfo {
   private boolean validId(String id) {
 
     Matcher matcher = p.matcher(id);
-
     return matcher.matches();
   }
 
